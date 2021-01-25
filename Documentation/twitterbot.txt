@@ -1,0 +1,4 @@
+Motiv of use: I'm creating a bot for share movie reviews and and all related information. I have a prominent information page about many movies and
+I plan to automate with the chatbot and provide to mi visitants updated about movies.
+
+I plan to use the twitter functionality to share the new updates of my page in real time.
