@@ -90,7 +90,7 @@ setTimeout(function(){
   stream.end();
 });
 
-}, 100000)
+}, 1000000)
 
 function Mensaje(numero){
 
