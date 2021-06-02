@@ -5,6 +5,10 @@ require('dotenv').config({
 });
 
 module.exports = {
+  twitterLogin: {
+    user: process.env.TWITTER_USER,
+    pass: process.env.TWITTER_PASS,
+  },
   twitterKeys: {
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,

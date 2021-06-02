@@ -10,7 +10,7 @@ T = new Twit(config.twitterKeys);
 
     try {
 
-      const browser = await puppeteer.launch() ;
+      const browser = await puppeteer.launch({headless: false}) ;
       const page = await browser.newPage();
       await page.goto('https://mobile.twitter.com/login');
 
@@ -22,21 +22,20 @@ T = new Twit(config.twitterKeys);
 
 
       // Login
-       await page.type('input[name="session[username_or_email]"]', 'pelisfull3');
-       await page.type('input[name="session[password]"', 'fkferrers10');
+       await page.type('input[name="session[username_or_email]"]', config.twitterLogin.user);
+       await page.type('input[name="session[password]"', config.twitterLogin.pass);
        await page.click('div[role=button]');
 
        var fs = require('fs');
        var tweets = new Array;
 
-       fs.readFile('nuevo.txt', 'utf8', function(err, data) {
+       fs.readFile('tweets.txt', 'utf8', function(err, data) {
          if (err) {
            return console.log(err);
          }
 
          tweets = data.split('\n');
        });
-
 
        await page
          .waitForNavigation({ waitUntil: "domcontentloaded" })
@@ -113,8 +112,6 @@ T = new Twit(config.twitterKeys);
            });
 
          }
-
-
 
       //await page.waitForSelector('h1');
       //let h1 = await page.evaluate( () => document.querySelector('h1').innerText)

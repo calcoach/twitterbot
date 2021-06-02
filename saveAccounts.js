@@ -58,8 +58,7 @@ stream.on('tweet', function (tweet) {
    //Mensaje
    var reply = "@" + user + " " + name  + " "+ Mensaje(getRandomArbitrary(0, 10).toString());
 
-   data.push(reply);
-
+   //data.push(reply);
 
 
    //T.post('statuses/update', {status: reply}, function (err, data, response) {
@@ -72,7 +71,10 @@ stream.on('tweet', function (tweet) {
  //}
 
 
-  var text = name + "/status/" + nameID+"  texto- >"+ txt;
+//Nombre del twitero y link del twwet.
+
+  var text = name + " https://twitter.com/" + user + "/status/" + nameID+"  texto- >"+ txt;
+  data.push(text);
   console.log(text)
 
 })
